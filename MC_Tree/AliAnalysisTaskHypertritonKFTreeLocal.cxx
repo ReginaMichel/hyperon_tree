@@ -105,6 +105,9 @@ DeviationOfDaughtersXY(-999),
 pxPion(-999),
 pyPion(-999),
 pzPion(-999),
+pxPionKF(-999),
+pyPionKF(-999),
+pzPionKF(-999),
 ChargePion(-999),
 DCAPion(-999),
 //DistanceToPVPion(-999),
@@ -128,6 +131,9 @@ DeviationToSecVertPion(-999),
 pxHe(-999),
 pyHe(-999),
 pzHe(-999),
+pxHeKF(-999),
+pyHeKF(-999),
+pzHeKF(-999),
 ChargeHe(-999),
 DCA3He(-999),
 //DistanceToPV3He(-999),
@@ -172,6 +178,9 @@ OpeningAngle_Proton_Deuteron(-999),
 pxDeuteron(-999),
 pyDeuteron(-999),
 pzDeuteron(-999),
+pxDeuteronKF(-999),
+pyDeuteronKF(-999),
+pzDeuteronKF(-999),
 ChargeDeuteron(-999),
 DCADeuteron(-999),
 //DistanceToPVDeuteron(-999),
@@ -196,6 +205,9 @@ DeviationToSecVertDeuteron(-999),
 pxProton(-999),
 pyProton(-999),
 pzProton(-999),
+pxProtonKF(-999),
+pyProtonKF(-999),
+pzProtonKF(-999),
 ChargeProton(-999),
 DCAProton(-999),
 //DistanceToPVProton(-999),
@@ -351,6 +363,9 @@ DeviationOfDaughtersXY(-999),
 pxPion(-999),
 pyPion(-999),
 pzPion(-999),
+pxPionKF(-999),
+pyPionKF(-999),
+pzPionKF(-999),
 ChargePion(-999),
 DCAPion(-999),
 //DistanceToPVPion(-999),
@@ -374,6 +389,9 @@ DeviationToSecVertPion(-999),
 pxHe(-999),
 pyHe(-999),
 pzHe(-999),
+pxHeKF(-999),
+pyHeKF(-999),
+pzHeKF(-999),
 ChargeHe(-999),
 DCA3He(-999),
 //DistanceToPV3He(-999),
@@ -418,6 +436,9 @@ OpeningAngle_Proton_Deuteron(-999),
 pxDeuteron(-999),
 pyDeuteron(-999),
 pzDeuteron(-999),
+pxDeuteronKF(-999),
+pyDeuteronKF(-999),
+pzDeuteronKF(-999),
 ChargeDeuteron(-999),
 DCADeuteron(-999),
 //DistanceToPVDeuteron(-999),
@@ -442,6 +463,9 @@ DeviationToSecVertDeuteron(-999),
 pxProton(-999),
 pyProton(-999),
 pzProton(-999),
+pxProtonKF(-999),
+pyProtonKF(-999),
+pzProtonKF(-999),
 ChargeProton(-999),
 DCAProton(-999),
 //DistanceToPVProton(-999),
@@ -687,6 +711,9 @@ void AliAnalysisTaskHypertritonKFTreeLocal::UserCreateOutputObjects()
     CandidateTree->Branch("pxPion",&pxPion,"pxPion/F");
     CandidateTree->Branch("pyPion",&pyPion,"pyPion/F");
     CandidateTree->Branch("pzPion",&pzPion,"pzPion/F");
+    CandidateTree->Branch("pxPionKF",&pxPionKF,"pxPionKF/F");
+    CandidateTree->Branch("pyPionKF",&pyPionKF,"pyPionKF/F");
+    CandidateTree->Branch("pzPionKF",&pzPionKF,"pzPionKF/F");
     CandidateTree->Branch("ChargePion",&ChargePion,"ChargePion/I");
     CandidateTree->Branch("DCAPion",&DCAPion,"DCAPion/F");
     //    CandidateTree->Branch("DistanceToPVPion",&DistanceToPVPion,"DistanceToPVPion/F");
@@ -711,6 +738,9 @@ void AliAnalysisTaskHypertritonKFTreeLocal::UserCreateOutputObjects()
     CandidateTree->Branch("pxHe",&pxHe,"pxHe/F");
     CandidateTree->Branch("pyHe",&pyHe,"pyHe/F");
     CandidateTree->Branch("pzHe",&pzHe,"pzHe/F");
+    CandidateTree->Branch("pxHeKF",&pxHeKF,"pxHeKF/F");
+    CandidateTree->Branch("pyHeKF",&pyHeKF,"pyHeKF/F");
+    CandidateTree->Branch("pzHeKF",&pzHeKF,"pzHeKF/F");
     CandidateTree->Branch("ChargeHe",&ChargeHe,"ChargeHe/I");
     CandidateTree->Branch("DCA3He",&DCA3He,"DCA3He/F");
     //    CandidateTree->Branch("DistanceToPV3He",&DistanceToPV3He,"DistanceToPV3He/F");
@@ -840,6 +870,9 @@ void AliAnalysisTaskHypertritonKFTreeLocal::UserCreateOutputObjects()
     CandidateTree_3Body->Branch("pxDeuteron",&pxDeuteron,"pxDeuteron/F");
     CandidateTree_3Body->Branch("pyDeuteron",&pyDeuteron,"pyDeuteron/F");
     CandidateTree_3Body->Branch("pzDeuteron",&pzDeuteron,"pzDeuteron/F");
+    CandidateTree_3Body->Branch("pxDeuteronKF",&pxDeuteronKF,"pxDeuteronKF/F");
+    CandidateTree_3Body->Branch("pyDeuteronKF",&pyDeuteronKF,"pyDeuteronKF/F");
+    CandidateTree_3Body->Branch("pzDeuteronKF",&pzDeuteronKF,"pzDeuteronKF/F");
     CandidateTree_3Body->Branch("ChargeDeuteron",&ChargeDeuteron,"ChargeDeuteron/I");
     CandidateTree_3Body->Branch("DCADeuteron",&DCADeuteron,"DCADeuteron/F");
     //    CandidateTree_3Body->Branch("DistanceToPVDeuteron",&DistanceToPVDeuteron,"DistanceToPVDeuteron/F");
@@ -865,6 +898,9 @@ void AliAnalysisTaskHypertritonKFTreeLocal::UserCreateOutputObjects()
     CandidateTree_3Body->Branch("pxProton",&pxProton,"pxProton/F");
     CandidateTree_3Body->Branch("pyProton",&pyProton,"pyProton/F");
     CandidateTree_3Body->Branch("pzProton",&pzProton,"pzProton/F");
+    CandidateTree_3Body->Branch("pxProtonKF",&pxProtonKF,"pxProtonKF/F");
+    CandidateTree_3Body->Branch("pyProtonKF",&pyProtonKF,"pyProtonKF/F");
+    CandidateTree_3Body->Branch("pzProtonKF",&pzProtonKF,"pzProtonKF/F");
     CandidateTree_3Body->Branch("ChargeProton",&ChargeProton,"ChargeProton/I");
     CandidateTree_3Body->Branch("DCAProton",&DCAProton,"DCAProton/F");
     //    CandidateTree_3Body->Branch("DistanceToPVProton",&DistanceToPVProton,"DistanceToPVProton/F");
@@ -890,6 +926,9 @@ void AliAnalysisTaskHypertritonKFTreeLocal::UserCreateOutputObjects()
     CandidateTree_3Body->Branch("pxPion",&pxPion,"pxPion/F");
     CandidateTree_3Body->Branch("pyPion",&pyPion,"pyPion/F");
     CandidateTree_3Body->Branch("pzPion",&pzPion,"pzPion/F");
+    CandidateTree_3Body->Branch("pxPionKF",&pxPionKF,"pxPionKF/F");
+    CandidateTree_3Body->Branch("pyPionKF",&pyPionKF,"pyPionKF/F");
+    CandidateTree_3Body->Branch("pzPionKF",&pzPionKF,"pzPionKF/F");
     CandidateTree_3Body->Branch("ChargePion",&ChargePion,"ChargePion/I");
     CandidateTree_3Body->Branch("DCAPion",&DCAPion,"DCAPion/F");
     //    CandidateTree_3Body->Branch("DistanceToPVPion",&DistanceToPVPion,"DistanceToPVPion/F");
@@ -1233,9 +1272,6 @@ void AliAnalysisTaskHypertritonKFTreeLocal::TwoBodyDecay(const vector<Int_t>& He
     }
     KFParticle kfpDaughter2 = CreateKFTrack(track, pdgPion);
     
-    /// Fill pion variables
-    FillPionVariables(track, kfpDaughter2);
-    
     for (unsigned int jHe3=0; jHe3 < (UInt_t) He3CandTrackId.size(); jHe3++) {
       /// Make sure not to use a single track twice
       if ( PionCandTrackId[iPion]==He3CandTrackId[jHe3] ) continue;
@@ -1249,16 +1285,24 @@ void AliAnalysisTaskHypertritonKFTreeLocal::TwoBodyDecay(const vector<Int_t>& He
       }
       
       KFParticle kfpDaughter1 = CreateKFTrack(ESDtrackHe3, pdg3He);
-      /// Fill 3He variables
-      FillHe3Variables(ESDtrackHe3, kfpDaughter1);
+      
       /// Fill daughter varibales
       FillDaughterVariables(kfpDaughter1,kfpDaughter2);
       //  if ( !DaughterSelection() ) continue; /// currently no selection
       
       /// create the kfp mother and histogram pt and mass
       KFParticle kfpMother(kfpDaughter1,kfpDaughter2);
-      
       Charge = kfpMother.GetQ();
+      
+      kfpMother.SetProductionVertex(PrimVertex);    // constrain the hypertrton to come from the primary vertex
+      kfpMother.TransportToDecayVertex();           // move mother back to decay verty 
+      
+      /// Fill pion variables
+      FillPionVariables(track, kfpDaughter2, kfpMother);      
+           
+      /// Fill 3He variables
+      FillHe3Variables(ESDtrackHe3, kfpDaughter1, kfpMother);      
+    
       /// remove reconstructed candidates with wrong charge
       if ( abs(Charge)!= 1 ) continue;
       
@@ -1354,7 +1398,7 @@ void AliAnalysisTaskHypertritonKFTreeLocal::ThreeBodyDecay(const vector<Int_t>& 
     KFParticle kfpDaughter3 = CreateKFTrack(track, pdgPion);
     
     /// Fill pion variables
-    FillPionVariables(track, kfpDaughter3);
+    FillPionVariables(track, kfpDaughter3); // propagateion to production vertex not implemented for 3 body decay
     
     for (unsigned int iHypertTritonCandidate=0; iHypertTritonCandidate < (UInt_t) HyperTritonCandidates.size(); iHypertTritonCandidate++) {
       
@@ -1597,8 +1641,6 @@ void AliAnalysisTaskHypertritonKFTreeLocal::TwoBodyDecayMC(const vector<Int_t>& 
   KFParticle kfpDaughter1 = CreateKFTrack(ESDTrack1, pdgDaughter1);
   KFParticle kfpDaughter2 = CreateKFTrack(ESDTrack2, pdgDaughter2);
   
-  FillHe3Variables(ESDTrack1, kfpDaughter1);
-  FillPionVariables(ESDTrack2, kfpDaughter2);
   FillDaughterVariables(kfpDaughter1,kfpDaughter2);
   
   //  if ( !DaughterSelection() ) continue; /// currently no selection
@@ -1607,9 +1649,14 @@ void AliAnalysisTaskHypertritonKFTreeLocal::TwoBodyDecayMC(const vector<Int_t>& 
   KFParticle kfpMother(kfpDaughter1,kfpDaughter2);
   if (!HypertritonCandidateSelection(kfpMother)) return;
   
-  FillDistanceToSececondaryVertex(kfpDaughter1,kfpDaughter2,kfpMother);
   
+  
+  FillDistanceToSececondaryVertex(kfpDaughter1,kfpDaughter2,kfpMother);
   Charge = kfpMother.GetQ();
+  
+  FillHe3Variables(ESDTrack1, kfpDaughter1, kfpMother);
+  FillPionVariables(ESDTrack2, kfpDaughter2, kfpMother);
+  
   CandidateTree->Fill();
 }
 ///____________________________________________________________
@@ -1693,10 +1740,7 @@ void AliAnalysisTaskHypertritonKFTreeLocal::ThreeBodyDecayMC(const vector<Int_t>
   KFParticle kfpDaughter1 = CreateKFTrack(ESDTrack1, pdgDaughter1);
   KFParticle kfpDaughter2 = CreateKFTrack(ESDTrack2, pdgDaughter2);
   KFParticle kfpDaughter3 = CreateKFTrack(ESDTrack3, pdgDaughter3);
-  
-  FillDeuteronVariables(ESDTrack1, kfpDaughter1);
-  FillProtonVariables(ESDTrack2, kfpDaughter2);
-  FillPionVariables(ESDTrack3, kfpDaughter3);
+
   
   FillDaughterVariables(kfpDaughter1,kfpDaughter2, kfpDaughter3);
   
@@ -1720,7 +1764,14 @@ void AliAnalysisTaskHypertritonKFTreeLocal::ThreeBodyDecayMC(const vector<Int_t>
   kfpMother += kfpDaughter3;
   if (!HypertritonCandidateSelection(kfpMother, false)) return;
   
-  Charge = kfpMother.GetQ();
+  Charge = kfpMother.GetQ();  
+    
+  // fill daughter variables
+  FillDeuteronVariables(ESDTrack1, kfpDaughter1);
+  FillProtonVariables(ESDTrack2, kfpDaughter2);
+  
+  FillPionVariables(ESDTrack3, kfpDaughter3); // no propagation to produciton vertex for 3 body decay 
+  
   
   FillDistanceToSececondaryVertex(kfpDaughter1, kfpDaughter2, kfpDaughter3, kfpMother);
   
@@ -2080,11 +2131,16 @@ Float_t AliAnalysisTaskHypertritonKFTreeLocal::CalculatePointingAngle(KFParticle
   
 }
 ///____________________________________________________________
-void AliAnalysisTaskHypertritonKFTreeLocal::FillHe3Variables (AliESDtrack* track, KFParticle KFPart){
+void AliAnalysisTaskHypertritonKFTreeLocal::FillHe3Variables (AliESDtrack* track, KFParticle KFPart, KFParticle KFMoth){
   
   pxHe = track->Px();
   pyHe = track->Py();
   pzHe = track->Pz();
+  
+  KFPart.SetProductionVertex(KFMoth);
+  pxHeKF = KFPart.GetPx();
+  pyHeKF = KFPart.GetPy();
+  pzHeKF = KFPart.GetPz();
   
   ChargeHe = 2*track->Charge();
   
@@ -2119,12 +2175,56 @@ void AliAnalysisTaskHypertritonKFTreeLocal::FillHe3Variables (AliESDtrack* track
   }
 }
 ///____________________________________________________________
+void AliAnalysisTaskHypertritonKFTreeLocal::FillPionVariables (AliESDtrack* track, KFParticle KFPart, KFParticle KFMoth){
+  
+  pxPion = track->Px();
+  pyPion = track->Py();
+  pzPion = track->Pz();
+
+  KFPart.SetProductionVertex(KFMoth);
+  pxPionKF = KFPart.GetPx();
+  pyPionKF = KFPart.GetPy();
+  pzPionKF = KFPart.GetPz();
+
+  ChargePion = track->Charge();
+  
+  TPCMomPion = track->GetTPCmomentum();
+  TPCnSigmaPion = fPIDResponse->NumberOfSigmasTPC(track, AliPID::kPion);
+  
+  DCAPion = GetDCA(track,"3D");
+  //  DistanceToPVPion =  KFPart.GetDistanceFromVertex(PrimVertex);
+  DeviationFromPVPion = KFPart.GetDeviationFromVertex(PrimVertex);
+  DCAPionXY = GetDCA(track,"xy");
+  //  DistanceToPVPionXY =  KFPart.GetDistanceFromVertexXY(PrimVertex);
+  DeviationFromPVPionXY = KFPart.GetDeviationFromVertexXY(PrimVertex);
+  
+  HasPointOnITSLayer0Pion = track->HasPointOnITSLayer(0);
+  HasPointOnITSLayer1Pion = track->HasPointOnITSLayer(1);
+  HasPointOnITSLayer2Pion = track->HasPointOnITSLayer(2);
+  HasPointOnITSLayer3Pion = track->HasPointOnITSLayer(3);
+  HasPointOnITSLayer4Pion = track->HasPointOnITSLayer(4);
+  HasPointOnITSLayer5Pion = track->HasPointOnITSLayer(5);
+  
+  NCrossedRowsTPCPion = (Int_t) track->GetTPCCrossedRows();
+  NPIDClusterTPCPion =  (Int_t) track->GetTPCsignalN();
+  
+  PIDForTrackingPion = track->GetPIDForTracking();
+  
+  if (kIsMC) {
+    Double_t covMatrix[21];
+    track->GetCovarianceXYZPxPyPz(covMatrix);
+    pxPionVariance = covMatrix[9];
+    pyPionVariance = covMatrix[14];
+    pzPionVariance = covMatrix[20];
+  }
+}
+///____________________________________________________________
 void AliAnalysisTaskHypertritonKFTreeLocal::FillPionVariables (AliESDtrack* track, KFParticle KFPart){
   
   pxPion = track->Px();
   pyPion = track->Py();
   pzPion = track->Pz();
-  
+
   ChargePion = track->Charge();
   
   TPCMomPion = track->GetTPCmomentum();

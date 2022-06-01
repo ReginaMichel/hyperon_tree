@@ -67,7 +67,8 @@ private:
   KFVertex CreateKFVertex(const AliVVertex* vertex);         /// Converts ESD Vertex to KFVertex
   Float_t CalculatePointingAngle(KFParticle KFPart, KFVertex KFVtx); // Calculates the pointing angle between the momentum of the particle and the vector connecting it to the given vertex
   
-  void FillHe3Variables(AliESDtrack* track, KFParticle KFPart);
+  void FillHe3Variables(AliESDtrack* track, KFParticle KFPart, KFParticle KFMoth);
+  void FillPionVariables(AliESDtrack* track, KFParticle KFPart, KFParticle KFMoth);
   void FillPionVariables(AliESDtrack* track, KFParticle KFPart);
   
   void FillDeuteronVariables(AliESDtrack* track, KFParticle KFPart);
@@ -163,9 +164,14 @@ private:
   Float_t DeviationOfDaughtersXY; /// chi2 deviation of the daughter tracks  in xy
   
   ///  pion
-  Float_t pxPion;                 /// momentum of the pion dauther in x direction
-  Float_t pyPion;                 /// momentum of the pion dauther in y direction
-  Float_t pzPion;                 /// momentum of the pion dauther in z direction
+  Float_t pxPion;                 /// momentum of the pion dauther in x direction at the prim vertex
+  Float_t pyPion;                 /// momentum of the pion dauther in y direction at the prim vertex
+  Float_t pzPion;                 /// momentum of the pion dauther in z direction at the prim vertex
+  Float_t pxPionKF;                 /// momentum of the pion dauther in x direction from KF
+  Float_t pyPionKF;                 /// momentum of the pion dauther in y direction from KF
+  Float_t pzPionKF;                 /// momentum of the pion dauther in z direction from KF
+  
+  
   Int_t ChargePion;               /// Charge of pion
   Float_t DCAPion;                /// Distance of closest approach to the primary vertex of the pion daughter (ESD information)
   //  Float_t DistanceToPVPion;       /// Distance of closest approach to the primary vertex of the pion daughter (KF information)
@@ -188,9 +194,14 @@ private:
   Float_t DeviationToSecVertPion; /// deviation of the pion track from the secondary vertex (KF information)
   
   ///  He3
-  Float_t pxHe;                   /// momentum of the He dauther in x direction
-  Float_t pyHe;                   /// momentum of the He dauther in y direction
-  Float_t pzHe;                   /// momentum of the He dauther in z direction
+  Float_t pxHe;                   /// momentum of the He dauther in x direction at the prim vertex
+  Float_t pyHe;                   /// momentum of the He dauther in y direction at the prim vertex
+  Float_t pzHe;                   /// momentum of the He dauther in z direction at the prim vertex
+  Float_t pxHeKF;                   /// momentum of the He dauther in x direction from KF
+  Float_t pyHeKF;                   /// momentum of the He dauther in y direction from KF
+  Float_t pzHeKF;                   /// momentum of the He dauther in z direction from KF
+  
+  
   Int_t ChargeHe;                 /// Charge of helium-3
   Float_t DCA3He;                 /// Distance of closest approach to the primary vertex of the pion daughter (ESD information)
   //  Float_t DistanceToPV3He;        /// Distance of closest approach to the primary vertex of the pion daughter (KF information)
@@ -242,9 +253,12 @@ private:
   Float_t OpeningAngle_Proton_Deuteron;
   
   ///  Deuteron
-  Float_t pxDeuteron;                      /// momentum of the deuteron dauther in x direction
-  Float_t pyDeuteron;                      /// momentum of the deuteron dauther in y direction
-  Float_t pzDeuteron;                      /// momentum of the deuteron dauther in z direction
+  Float_t pxDeuteron;                      /// momentum of the deuteron dauther in x direction at prim vertex
+  Float_t pyDeuteron;                      /// momentum of the deuteron dauther in y direction at prim vertex
+  Float_t pzDeuteron;                      /// momentum of the deuteron dauther in z direction at prim vertex
+  Float_t pxDeuteronKF;                      /// momentum of the deuteron dauther in x direction from KF
+  Float_t pyDeuteronKF;                      /// momentum of the deuteron dauther in y direction from KF
+  Float_t pzDeuteronKF;                      /// momentum of the deuteron dauther in z direction from KF
   Int_t ChargeDeuteron;                    /// Charge of deuteron
   Float_t DCADeuteron;                /// Distance of closest approach to the primary vertex of the Deuteron daughter (ESD information)
   //  Float_t DistanceToPVDeuteron;       /// Distance of closest approach to the primary vertex of the Deuteron daughter (KF information)
@@ -268,9 +282,12 @@ private:
   Float_t DeviationToSecVertDeuteron;
   
   /// Proton
-  Float_t pxProton;                      /// momentum of the proton dauther in x direction
-  Float_t pyProton;                      /// momentum of the  proton dauther in y direction
-  Float_t pzProton;                      /// momentum of the proton dauther in z direction
+  Float_t pxProton;                      /// momentum of the proton dauther in x direction at primary vertex
+  Float_t pyProton;                      /// momentum of the  proton dauther in y direction at primary vertex
+  Float_t pzProton;                      /// momentum of the proton dauther in z direction at primary vertex
+  Float_t pxProtonKF;                      /// momentum of the proton dauther in x direction from KF
+  Float_t pyProtonKF;                      /// momentum of the  proton dauther in y direction from KF
+  Float_t pzProtonKF;                      /// momentum of the proton dauther in z direction from KF
   Int_t ChargeProton;                    /// Charge of proton
   Float_t DCAProton;                /// Distance of closest approach to the primary vertex of the Proton daughter (ESD information)
   //  Float_t DistanceToPVProton;       /// Distance of closest approach to the primary vertex of the Proton daughter (KF information)
