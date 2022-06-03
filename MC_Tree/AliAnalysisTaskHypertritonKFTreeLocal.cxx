@@ -35,6 +35,11 @@
 
 #include "AliAnalysisTaskHypertritonKFTreeLocal.h"
 
+//Global Variables added by regina
+const Float_t m3He_r  = 2.8083910000;//in GeV/c^{2}
+const Float_t mpion_r = 0.1395701000;//in GeV/c^{2}
+const Float_t mHyp_r  = 2.9913100000;//in GeV/c^{2}
+
 /// your analysis class
 class AliAnalysisTaskHypertritonKFTreeLocal;
 /// classimp: necessary for root
@@ -2138,6 +2143,8 @@ void AliAnalysisTaskHypertritonKFTreeLocal::FillHe3Variables (AliESDtrack* track
   pzHe = track->Pz();
   
   KFPart.SetProductionVertex(KFMoth);
+  // line added by regina and vlad:
+  KFPart.SetNonlinearMassConstraint(m3He_r);
   pxHeKF = KFPart.GetPx();
   pyHeKF = KFPart.GetPy();
   pzHeKF = KFPart.GetPz();
@@ -2182,6 +2189,8 @@ void AliAnalysisTaskHypertritonKFTreeLocal::FillPionVariables (AliESDtrack* trac
   pzPion = track->Pz();
 
   KFPart.SetProductionVertex(KFMoth);
+  // line added by regina and vlad:
+  KFPart.SetNonlinearMassConstraint(mpion_r);
   pxPionKF = KFPart.GetPx();
   pyPionKF = KFPart.GetPy();
   pzPionKF = KFPart.GetPz();
